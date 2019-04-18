@@ -27,3 +27,33 @@ Funcionalidade: Restaurantes
 
         Quando acesso a lista de restaurantes
         Então cada restaurante deve exibir sua nota de avaliação
+
+    # Scenario em esquema de cenário
+
+
+    Esquema do Cenario: Restaurantes disponíveis
+
+        Quando acesso a lista de restaurantes
+        Então cada restaurante deve ter <id> <nome> <categoria> <entrega> <avaliacao>
+
+        Exemplos:
+            | id | nome             | categoria    | entrega      | avaliacao |
+            | 0  | "Bread & Bakery" | "Padaria"    | "25 minutos" | 4.9       |
+            | 1  | "Burger House"   | "Hamburgers" | "30 minutos" | 3.5       |
+            | 2  | "Coffee Corner"  | "Cafeteria"  | "20 minutos" | 4.8       |
+            | 3  | "Green Food"     | "Saudável"   | "40 minutos" | 4.1       |
+            | 5  | "Tasty Treats"   | "Doces"      | "20 minutos" | 4.4       |
+
+    @temp
+    Cenario: Restaurantes disponíveis
+
+        Dado que temos os seguintes restaurantes
+            | nome           | categoria  | entrega    | avaliacao |
+            | Bread & Bakery | Padaria    | 25 minutos | 4.9       |
+            | Burger House   | Hamburgers | 30 minutos | 3.5       |
+            | Coffee Corner  | Cafeteria  | 20 minutos | 4.8       |
+            | Green Food     | Saudável   | 40 minutos | 4.1       |
+            | Ice Cream      | Sorvetes   | 1 hora     | 0         |
+            | Tasty Treats   | Doces      | 20 minutos | 4.4       |
+        Quando acesso a lista de restaurantes
+        Então devo ver todos os restaurantes desta lista
