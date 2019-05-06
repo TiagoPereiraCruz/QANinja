@@ -44,7 +44,6 @@ Funcionalidade: Restaurantes
             | 3  | "Green Food"     | "Saudável"   | "40 minutos" | 4.1       |
             | 5  | "Tasty Treats"   | "Doces"      | "20 minutos" | 4.4       |
 
-    @temp
     Cenario: Restaurantes disponíveis
 
         Dado que temos os seguintes restaurantes
