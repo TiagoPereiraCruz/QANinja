@@ -1,5 +1,6 @@
 #language: pt
 
+@all
 Funcionalidade: Cardápio
     Para que eu possa decidir o que pretendo comer
     Sendo um usuário que escolheu um restaurante
@@ -8,7 +9,6 @@ Funcionalidade: Cardápio
     Contexto: Restaurantes
         Dado que acesso a lista de restaurante
 
-    @cardapio
     Cenario: Produto
 
         Quando eu escolho o restaurante "Burger House"

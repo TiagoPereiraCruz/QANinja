@@ -1,6 +1,6 @@
 #language: pt
 
-@green-food
+@green-food @all
 Funcionalidade: Fechar carrinho
     Para que eu possa ter certeza que vou receber e pagar tudo certinho
     Sendo um usuário que adicionou itens

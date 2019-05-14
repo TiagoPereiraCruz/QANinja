@@ -1,6 +1,6 @@
 #language: pt
 
-@green-food
+@green-food @all
 Funcionalidade: Finalizar pedido
     Para que eu possa receber o pedidono meu endereço
     Sendo um usuário que fechou o carrinho com itens
@@ -25,6 +25,7 @@ Funcionalidade: Finalizar pedido
     #     Quando eu clico em "Finalizar Pedido"
     #     Então devo ver uma mensagem de sucesso
 
+    @smoke
     Cenario: Finalizar pedido com Cartão Refeição
 
         Dado que eu fechei o pedido com os itens:

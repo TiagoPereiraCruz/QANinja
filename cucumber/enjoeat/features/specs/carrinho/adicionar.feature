@@ -1,11 +1,12 @@
 #language: pt
 
-@bread_bakery
+@bread_bakery @all
 Funcionalidade: Adicionar ao carrinho
     Para que eu possa finalizar uma compra
     Sendo um cliente que já decidiu o que deseja comer
     Posso adicionar itens ao meu carrinho
 
+    @smoke
     Cenario: Adicionar 1 unidade
 
         Dado que o produto desejado é "Cup Cake"
