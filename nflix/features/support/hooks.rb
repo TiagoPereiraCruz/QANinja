@@ -1,10 +1,10 @@
 Before do
   @login_page = LoginPage.new
-  @sidebar = SideBarView.new
   @movie_page = MoviePage.new
+  @sidebar = SideBarView.new
 end
 
-Before ('@new_movie') do
+Before ('@login') do
   @login_page.go
-  @login_page.with('tony@stark.com', 'pwd456')
+  @login_page.with('tony@stark.com', 'pwd123')
 end

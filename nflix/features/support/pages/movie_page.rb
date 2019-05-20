@@ -18,15 +18,23 @@ class MoviePage
     actor = find('.input-new-tag')
     cast.each do |a|
       actor.set a
-      actor.send_keys :tab
+      actor.send_keys :enter
     end
+  end
+
+  def alert
+    find('.alert').text
+  end
+
+  def select_status(status)
+    find('input[placeholder=Status]').click
+    find('.el-select-dropdown__item', text: status).click
   end
 
   def create(movie)
     find('input[name=title]').set movie['title']
 
-    find('input[placeholder=Status]').click
-    find('.el-select-dropdown__item', text: movie['status']).click
+    select_status(movie['status']) unless movie['status'].empty?
 
     find('input[name=year]').set movie['year']
     find('input[name=release_date]').set movie['release_date']
@@ -35,7 +43,7 @@ class MoviePage
 
     find('textarea[name=overview]').set movie['overview']
 
-    upload(movie['cover'])
+    upload(movie['cover']) unless movie['cover'].empty?
 
     find('#create-movie').click
   end

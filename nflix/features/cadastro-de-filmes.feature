@@ -1,5 +1,6 @@
 #language:pt
 
+@login
 Funcionalidade: Cadastro de filmes
     Para que eu possa disponibilizar novos títulos no catálogo
     Sendo um gestor de catálogo
@@ -20,6 +21,7 @@ Funcionalidade: Cadastro de filmes
             | "spider"   |
             | "jocker"   |
 
+    @attempt_movie
     Esquema do Cenario: Campos obrigatórios
         O gestorde catálogo tenta cadastrar um novo filme , mas esquece
         de preencher um dos campos que são obrigatórios, em seguida, o sistema
@@ -34,23 +36,7 @@ Funcionalidade: Cadastro de filmes
             | "no_title"   | "Oops - Filme sem titulo. Pode isso Arnaldo?"  |
             | "no_status"  | "Oops - O status deve ser informado!"          |
             | "no_year"    | "Oops - Faltou o ano de lançamento também!"    |
-            | "no_release" | "Oops - Quase lá, só falta a data de estréia!" |
-
-    Cenario: Sem nome
-        Quando eu tento cadastrar um filme sem o nome
-        Então devo ver a notificação "Oops - Filme sem titulo. Pode isso Arnaldo?"
-
-    Cenario: Sem status
-        Quando eu tento cadastrar um filme sem o status
-        Então devo ver a notificação "Oops - O status deve ser informado!"
-
-    Cenario: Ano de lançamento não informado
-        Quando eu tento cadastrar um filme sem ano de lançamento
-        Então devo ver a notificação "Oops - Faltou o ano de lançamento também!"
-
-    Cenario: Data de estréia não informada
-        Quando eu tento cadastrar um filme sem a data de estréia
-        Então devo ver a notificação "Oops - Quase lá, só falta a data de estréia!"
+            | "no_date"    | "Oops - Quase lá, só falta a data de estréia!" |
 
     Cenario: Duplicado
         Dado que "Deadpool 2" já foi cadastrado
