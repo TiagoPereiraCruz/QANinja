@@ -18,7 +18,7 @@ Funcionalidade: Login
         E devo ver a mensagem de alerta <texto>
 
         Exemplos:
-            | email             | senha     | texto                           |
+            | email             | senha     | texto                          |
             | "tony@stark.com"  | "abc123"  | "Usuário e/ou senha inválidos" |
             | "404@yahoo.com"   | "abc123"  | "Usuário e/ou senha inválidos" |
             | ""                | "abcxpto" | "Opps. Cadê o email?"          |

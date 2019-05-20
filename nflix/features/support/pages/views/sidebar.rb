@@ -1,7 +1,7 @@
 class SideBarView
-    include Capybara::DSL
+  include Capybara::DSL
 
-    def logged_user
-        user = find('.sidebar-wrapper .user .info span').text
-    end
+  def logged_user
+    find('.sidebar-wrapper .user .info span').text
+  end
 end
