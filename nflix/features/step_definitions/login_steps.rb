@@ -1,28 +1,25 @@
-Quando("eu faço login com {string} e {string}") do |email, password|
-    visit "/"
-    find("#emailId").set email
-    find("#passId").set password
-    click_button "Entrar"
+# frozen_string_literal: true
+
+# Ficou mais limpa, mais simples e objetiva
+# Uma step definition não deve conter tanta lógin assim. Ele tem ser pequeno e muito simples.
+
+Quando('eu faço login com {string} e {string}') do |email, password|
+  @login_page.go
+  @login_page.with(email, password)
 end
 
-Então("devo ser autenticado") do
-    js_script = 'return window.localStorage.getItem("default_auth_token");'
-    token = page.execute_script(js_script)
-    expect(token.length).to be 147
+Então('devo ser autenticado') do
+  expect(get_token.length).to be 147
 end
 
-Então("devo ver {string} na área logada") do |expect_name|
-    user = find('.sidebar-wrapper .user .info span')
-    expect(user.text).to eql expect_name
+Então('devo ver {string} na área logada') do |expect_name|
+  expect(@sidebar.logged_user).to eql expect_name
 end
 
-Então("não devo ser autenticado") do
-    js_script = 'return window.localStorage.getItem("default_auth_token");'
-    token = page.execute_script(js_script)
-    expect(token).to be nil
+Então('não devo ser autenticado') do
+  expect(get_token).to be nil
 end
 
-Então("devo ver a mensagem de alerta {string}") do |expect_message|
-    alert = find('.alert')
-    expect(alert.text).to eql expect_message
+Então('devo ver a mensagem de alerta {string}') do |expect_message|
+  expect(@login_page.alert).to eql expect_message
 end
