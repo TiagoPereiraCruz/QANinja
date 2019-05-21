@@ -22,3 +22,19 @@ end
 Então("devo ver a notificação {string}") do |expect_alert|
   expect(@movie_page.alert).to eql expect_alert
 end
+
+Dado("que {string} está no catálogo") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Quando("eu solicito a exclusão") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Quando("eu confirmo a solicitação") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então("este item deve ser removido do catálogo") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
