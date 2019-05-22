@@ -3,11 +3,11 @@ require 'pg'
 class Database
 
     def initialize
-        @connection = PG.connect(host: 'localhost', dbname: 'nflix', user: 'postgres', password: 'qaninja')
+        @connection = PG.connect(host: '192.168.99.100', dbname: 'nflix', user: 'postgres', password: 'qaninja')
     end
 
     def delete_movie(title)
-        @connection.exec("DELETE from public.movies where title = '#{title}'" ) 
+        @connection.exec("DELETE from public.movies where title = '#{title}'" )
     end
 
     def insert_movie(movie)

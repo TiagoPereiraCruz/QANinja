@@ -48,5 +48,3 @@ Funcionalidade: Cadastro de filmes
         Mas este filme já existe no catalogo
         Quando eu faço o cadastro deste filme
         Então devo ver a notificação "Oops - Este titulo já existe no Ninjaflix."
-
-
