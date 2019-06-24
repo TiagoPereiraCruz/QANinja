@@ -1,5 +1,7 @@
 describe "cadastro" do
   it "novo usuario" do
+    Database.new.delete_user("tiagopereira1989@hotmail.com")
+
     result = HTTParty.post(
       "http://192.168.99.100:3001/user",
       body: { full_name: "Tiago Pereira",
