@@ -13,6 +13,7 @@ FactoryBot.define do
   end
 
   factory :regitered_user, class: UserModel do
+    id { 0 }
     full_name { "Tiago Pereira" }
     email { "tiagopereira1988@hotmail.com" }
     password { "jarvis123" }
@@ -20,7 +21,8 @@ FactoryBot.define do
     after(:build) do |user|
       # puts "cleaning test data by email #{user.email}"
       Database.new.delete_user(user.email)
-      ApiUser.save(user.to_hash)
+      result = ApiUser.save(user.to_hash)
+      user.id = result.parsed_response["id"]
     end
   end
 
